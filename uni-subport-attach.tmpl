@@ -1,0 +1,4 @@
+{% set virtual_switch_name = data.evcName %}
+{% set sub_port_name = data.uniSubPortName %}
+
+virtual-switch interface attach vs {{virtual_switch_name}} sub-port {{sub_port_name}}

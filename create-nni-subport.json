@@ -1,0 +1,14 @@
+{
+    "endpoint": "cli",
+    "type": "bpprov.runners.simple.Sequence",
+    "tests": [
+        
+    ],
+    "endpoint-parameters": {
+        "template": "create-nni-subport.tmpl"
+    },
+    "out-path": [
+    ],
+    "in-path": [
+    ]
+}

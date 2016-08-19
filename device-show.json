@@ -1,0 +1,14 @@
+{
+    "endpoint": "cli",
+    "type": "bpprov.runners.simple.Sequence",
+    "endpoint-parameters": {
+        "command": "device show",
+        "fsm": "fsms/device-show.fsm"
+    },
+    #Performs a device show on 8700. Returns information regarding configured hardware
+    "out-path": [
+    ],
+    "in-schema": "in-show-device.json",
+    "in-path": [
+    ]
+}

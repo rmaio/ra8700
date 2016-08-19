@@ -1,0 +1,14 @@
+{
+    "endpoint": "cli",
+    "type": "bpprov.runners.simple.Sequence",
+    "tests": [
+        "commands/tests/uni-subport-attach-test.json"
+    ],
+    "endpoint-parameters": {
+        "template": "uni-subport-attach.tmpl"
+    },
+    "out-path": [
+    ],
+    "in-path": [
+    ]
+}

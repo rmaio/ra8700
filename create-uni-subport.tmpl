@@ -1,0 +1,21 @@
+{% set element_id = data.classElement.id %}
+{% set sub_port_name = data.uniSubPortName %}
+{% set vlan_item = data.classElement.c-tag %}
+{% set parent_port = data.Port_id%}
+
+
+
+{% if "untagged" in vlans_item %}
+    sub-port create sub-port {{ sub_port_name }} parent-port {{ parent_port }} classifier-precedence 5000 class-element 5000 vlan-untagged-data
+     {% else %}
+        sub-port create sub-port {{ client_sp_name }} parent-port {{ parent_port }} classifier-precedence {{ vlans|first }} class-element {{ vlan_item }} vtag-stack {{ vlan_item }}
+            {% endif %}
+            
+ {# Commenting out this section. Not in use at this time           
+            {% for vlan_item in cust_vlan_tokens %}
+                {% set vlan_item = vlan_item|trim %}
+                {% if vlan_item != "untagged" %}
+                    sub-port add sub-port {{ client_sp_name }} class-element {{ vlan_item }} vtag-stack {{ vlan_item }}
+                {% endif %}
+                
+                #}
